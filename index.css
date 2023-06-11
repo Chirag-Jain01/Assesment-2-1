@@ -51,16 +51,28 @@
     font-size: 1.5rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.search input {
-    border-radius: 70px;
+
+.search {position: relative;}
+  .search input[type="text"] {
     height: 25px;
+    border-radius: 70px;
     padding: 10px;
     outline: none;
     border: 0;
-    width: 100%;
+    width: 80%;
     height: 20px;
     font-family: serif;
-}
+    padding-right: 40px; 
+  }
+  .search i.bx-search {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #000000;
+    font-size: 20px;
+  }
+  
 .menu-icon img {
     height: 40px;
     cursor: pointer;
@@ -146,19 +158,21 @@
     cursor: pointer;
 }
 .icon{
-    position: absolute;
+    position: fixed;
+    top: 27%;
     right: 0;
-    top: calc(20% + 2px);
-}
-.icon li{
-    margin-bottom: 1rem;
-    border: 2px solid black;
-}
-.icon li img{
-    position: sticky;
-    height: 30px;
-    cursor: pointer;    
-}
+    transform: translateY(-50%);
+    z-index: 999;
+
+  }
+  .icon li img,
+  .icon li svg{
+    width: 30px;
+    margin-bottom: 0.3rem;
+    cursor: pointer;
+    border: 1px solid black;
+  }
+  
 
 /* ########## CONTACT STYLING ############ */
 .contact {
@@ -246,9 +260,9 @@
         width: 90px;
         height: 30px;
     }
-    .contact{
-        width: 55vh;
-    }
+    .icon{display: none;}
+    .search{display: none;}
+    .contact{width: 55vh;}
     .contact-container{
         display: flex;
         flex-direction: column;
@@ -266,16 +280,11 @@
         justify-content: center;
         align-items: center;
     }
-    .search input {
-        width: 150px;
-    }
     .menu-icon img {
         width: 40px;
         height: 30px;
     }
-    .navitems {
-        display: none;
-    }
+    .navitems {display: none;}
     .box1,
     .box2,
     .box3,
@@ -295,9 +304,7 @@
         width: 300px;
         height: 300px;
     }
-    .contact {
-        flex-basis: 100%;
-    }
+    .contact {flex-basis: 100%;}
     .contact-container{
         display: flex;
         flex-direction: column;
@@ -306,15 +313,11 @@
         display: flex;
         flex-direction: column;
     }   
-    .contact-button button{
-        padding: 0.6rem 1rem;
-    }   
+    .contact-button button{padding: 0.6rem 1rem;}   
 }
 
 @media (min-width:700px) and (max-width:1400px) {
-    .navitems {
-        display: none;
-    }
+    .navitems {display: none;}
     .box1,
     .box2,
     .box3,
@@ -342,9 +345,7 @@
 }
 
 @media (max-width:768px) {
-    .navitems {
-        display: none;
-    }
+    .navitems {display: none;}
     .about-container {
         display: flex;
         flex-direction: column;
@@ -357,9 +358,7 @@
         width: 400px;
         height: 400px;
     }
-    .box4 {
-        position: relative;
-    }
+    .box4 {position: relative;}
     .box4-img img {
         height: 40px;
         width: 40px;
